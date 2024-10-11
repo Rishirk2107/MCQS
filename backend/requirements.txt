@@ -1,0 +1,6 @@
+educhain
+langchain_nvidia_ai_endpoints
+PyMupdf
+fastapi
+uvicorn
+python-multipart

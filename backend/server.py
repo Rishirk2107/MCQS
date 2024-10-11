@@ -36,3 +36,10 @@ async def generate_mcqs(file: UploadFile = File(...), num_questions: int = Form(
     except Exception as e:
         print(f"Error: {e}")
         return JSONResponse(content={"error": "Error extracting MCQs"}, status_code=500)
+
+
+# Run the FastAPI app using Uvicorn
+if __name__ == "__main__":
+    #worker.process_document() #Perists directory
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="debug")
