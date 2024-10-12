@@ -1,22 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
-import IntroPage from './components/IntroPage';
-import UploadPdfPage from './components/UploadPdfPage';
-import QuizPage from './components/QuizPage';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const App = () => {
+import Intro from "./components/Intro";
+import Upload from "./components/Upload";
+import Main from "./components/Main";
+import LessonPlan from "./components/LessonPlan";
+import MCQ from "./components/MCQ";
+
+function App() {
   return (
-    <ChakraProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<IntroPage />} />
-          <Route path="/upload_pdf" element={<UploadPdfPage />} />
-          <Route path="/quiz" element={<QuizPage />} />
-        </Routes>
-      </Router>
-    </ChakraProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/lesson" element={<LessonPlan />} />
+        <Route path="/quiz" element={<MCQ />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
